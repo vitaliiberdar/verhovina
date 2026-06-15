@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Верховина - Магазин будівельних матеріалів</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#000;
+    border-bottom:4px solid #ff7b00;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+}
+
+.logo{
+    color:#ff7b00;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.search{
+    width:40%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+nav{
+    text-align:center;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff7b00;
+}
+
+.hero{
+    height:60vh;
+    background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    background:rgba(0,0,0,.7);
+    padding:20px;
+    border-radius:10px;
+    color:white;
+    animation:zoom 2s;
+}
+
+section{
+    padding:50px 5%;
+}
+
+h2{
+    color:#ff7b00;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.about{
+    text-align:center;
+    line-height:1.8;
+    max-width:1000px;
+    margin:auto;
+}
+
+.catalog{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product{
+    background:#222;
+    border:2px solid #ff7b00;
+    border-radius:10px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(255,123,0,.6);
+}
+
+.product img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-content{
+    padding:15px;
+}
+
+.product h3{
+    color:#ff7b00;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:24px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.buy{
+    background:#ff7b00;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buy:hover{
+    background:white;
+}
+
+.advantages{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.adv{
+    background:#222;
+    padding:20px;
+    border-left:5px solid #ff7b00;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#ff7b00;
+    color:black;
+}
+
+th,td{
+    border:1px solid #444;
+    padding:12px;
+    text-align:center;
+}
+
+iframe{
+    width:100%;
+    height:450px;
+    border:none;
+    border-radius:15px;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:20px;
+    border-top:4px solid #ff7b00;
+}
+
+@keyframes zoom{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media(max-width:768px){
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.search{
+    width:90%;
+}
+
+nav a{
+    display:block;
+    margin:10px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+<div class="logo">ВЕРХОВИНА</div>
+
+<input class="search" type="text" placeholder="Пошук товарів...">
+</div>
+
+<nav>
+<a href="#about">Про нас</a>
+<a href="#catalog">Каталог</a>
+<a href="#advantages">Переваги</a>
+<a href="#gallery">Галерея</a>
+<a href="#prices">Ціни</a>
+<a href="#contacts">Контакти</a>
+</nav>
+
+</header>
+
+<section class="hero">
+<h1>Все для будівництва та ремонту в одному місці</h1>
+</section>
+
+<section id="about">
+<h2>Про магазин</h2>
+
+<div class="about">
+<p>
+Магазин будівельних матеріалів «Верховина» пропонує широкий асортимент товарів для будівництва, ремонту та облаштування житла. Ми працюємо з перевіреними виробниками та забезпечуємо якісну продукцію за доступними цінами.
+</p>
+</div>
+</section>
+
+<section id="catalog">
+<h2>Каталог товарів</h2>
+
+<div class="catalog">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600">
+<div class="product-content">
+<h3>Цегла керамічна</h3>
+<p>Міцна будівельна цегла.</p>
+<div class="price">18 грн/шт</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1513467655676-561b7d489a88?w=600">
+<div class="product-content">
+<h3>Цемент М500</h3>
+<p>Для фундаментів та кладки.</p>
+<div class="price">220 грн</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600">
+<div class="product-content">
+<h3>Фарба фасадна</h3>
+<p>Для зовнішніх робіт.</p>
+<div class="price">850 грн</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600">
+<div class="product-content">
+<h3>Шуруповерт</h3>
+<p>Акумуляторний інструмент.</p>
+<div class="price">2499 грн</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600">
+<div class="product-content">
+<h3>Плитка</h3>
+<p>Керамічна плитка.</p>
+<div class="price">420 грн/м²</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600">
+<div class="product-content">
+<h3>Штукатурка</h3>
+<p>Суха будівельна суміш.</p>
+<div class="price">185 грн</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?w=600">
+<div class="product-content">
+<h3>Ламінат</h3>
+<p>Покриття для підлоги.</p>
+<div class="price">520 грн/м²</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600">
+<div class="product-content">
+<h3>Профнастил</h3>
+<p>Для покрівлі та огорож.</p>
+<div class="price">380 грн/м²</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600">
+<div class="product-content">
+<h3>Мінеральна вата</h3>
+<p>Теплоізоляційний матеріал.</p>
+<div class="price">790 грн</div>
+<button class="buy">Купити</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="advantages">
+<h2>Наші переваги</h2>
+
+<div class="advantages">
+
+<div class="adv">
+<h3>✔ Якість</h3>
+<p>Сертифіковані будівельні матеріали.</p>
+</div>
+
+<div class="adv">
+<h3>🚚 Доставка</h3>
+<p>Швидка доставка по місту та району.</p>
+</div>
+
+<div class="adv">
+<h3>💰 Вигідні ціни</h3>
+<p>Постійні акції та знижки.</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2>Галерея</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4">
+</div>
+</section>
+
+<section id="prices">
+<h2>Прайс-лист</h2>
+
+<table>
+<tr>
+<th>Товар</th>
+<th>Ціна</th>
+</tr>
+
+<tr><td>Цегла</td><td>18 грн/шт</td></tr>
+<tr><td>Цемент</td><td>220 грн</td></tr>
+<tr><td>Фарба</td><td>850 грн</td></tr>
+<tr><td>Плитка</td><td>420 грн/м²</td></tr>
+<tr><td>Шуруповерт</td><td>2499 грн</td></tr>
+</table>
+
+</section>
+
+<section id="contacts">
+<h2>Контакти</h2>
+
+<p>📍 м. Рахів, вул. Вербник, 107</p>
+<br>
+<p>📞 +380 63 622 14 11</p>
+<p>📞 +380 98 174 27 89</p>
+<br>
+<p>✉️ verhovyna@gmail.com</p>
+
+</section>
+
+<footer>
+<p>© 2026 Магазин будівельних матеріалів "Верховина"</p>
+</footer>
+
+</body>
+</html>
+
